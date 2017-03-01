@@ -1,0 +1,173 @@
+body {
+    margin: 0px;
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+.covervid-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlayContent {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /*width: 600px;*/
+    /*top: 100;
+    left: 100;*/
+    margin: auto;
+    padding: 32px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    /*background-color: rgba(255,250,250,0.4);*/
+    /*border-radius: 20px;*/
+    /*bottom: 100; */
+    /*right: 100;*/
+    /*color: #a9a9a9;*/
+    /*letter-spacing: 1px;*/
+    /*height: 250px;*/
+}
+
+@media screen and (max-device-width: 800px) {
+    html {
+         background: url(./client/assets/img/citywomanbkgd.jpg) #000 no-repeat center center fixed;
+    }
+    .covervide-wrapper {
+        display: none;
+    }
+}
+
+h2, h3 {
+    margin: 10px; 
+}
+
+.container {
+    display: flex;
+}
+
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.youTubersBlock {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.youTuberInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.errorMessage {
+    color: red;
+    font-weight: bold;
+}
+
+.filter {
+    margin-bottom: 64px;
+}
+
+button, input[type="submit"] {
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-decoration: none;
+    width: 150px;
+}
+
+button a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.bidBox .bidInput {
+    width: 100px;
+}
+
+.currentBids {
+    width: 250px;;
+    height: 200px;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    padding: 5px; 
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    padding: 10px;
+    border-style: none;
+    border: 1px solid #AAA;
+    color: #555;
+    font-size: 16px;
+    width: 250px;
+}
+
+.topHeader {
+    display: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#header-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 32px;
+    padding: 5px;
+    background-color: black;
+    align-items: center;
+    margin: 0px;
+    font-size: 16px;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+#header-bar > ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+}
+
+#header-bar > ul > li {
+    display: inline;
+    margin-left: 32px;
+}
+
+#header-bar > ul > li > a:link, #header-bar > ul > li > a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#header-bar > ul > li > a:hover {
+    color: white;
+    opacity: 0.50;
+    text-decoration: none;
+}

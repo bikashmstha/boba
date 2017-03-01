@@ -1,0 +1,22 @@
+<div class="covervid-wrapper">
+    <video covervid class="covervid-video" autoplay loop
+        poster="./assets/img/citywomanbkgd.jpeg">
+        <source src="./assets/videos/RollerCoaster-350950598.mp4" type="video/mp4">
+    </video>
+    <div class="overlayContent" style="padding: 100px;">
+        <h1>BOBA SEARCH</h1>
+        <p>Search for your favorite YouTubers' first videos!</p>
+        <div>
+            <h3>Search YouTubers:</h3>
+            <form ng-submit="youTubeSearch()">  
+                <p><input type="text" ng-model="newSearch.text" placeholder="Search"> <input type="submit" value="Search"></p>
+            </form>
+            <div class="youTubersBlock">
+                <div class="youTuberInfo" ng-repeat="channel in channelResults">
+                    <p>{{channel.snippet.channelTitle}}</p>
+                    <img ng-src="{{channel.snippet.thumbnails.default.url}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

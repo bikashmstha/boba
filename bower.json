@@ -1,0 +1,24 @@
+{
+  "name": "boba",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Stefanie Fluin <sjtrimble@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2"
+  },
+  "resolutions": {
+    "angular": "1.6.2"
+  }
+}

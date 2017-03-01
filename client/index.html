@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Meanster Bidding by S.Fluin</title>
+        <link rel="stylesheet" href="main.css"> 
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <script src="https://apis.google.com/js/api.js"></script>
+
+        <script src="angular/angular.js"></script>
+        <script src="angular-route/angular-route.js"></script>
+        <script src="ng-covervid/ngCovervid.js"></script>
+
+        <script src="./assets/app.js"></script>
+
+        <script src="./assets/controllers/mainCtrl.js"></script>
+
+        <script src="/assets/factories/SearchService.js"></script>
+    </head>
+
+    <body ng-app="app">
+        <div class="fullContainer">
+            <!--<video playsinline autoplay muted loop id="bgvid">
+            <source src="./assets/videos/RollerCoaster-350950598.mp4" type="video/mp4">
+            </video>-->
+            
+                <div id="header-bar">
+                    <ul>
+                        <li><a href="#!/main">Home</a></li>
+                    </ul>
+                    <!--<ul ng-controller="mainCtrl">
+                        <li><a href="" ng-if="!user.userLoggedIn" ng-click="user.login()">Login</a></li>
+                        <li><a href="" ng-if="user.userLoggedIn" ng-click="logoutUser()">Logout</a></li>
+                    </ul>-->
+                </div>
+            </div>
+            <div ng-view=""></div>
+            </div>
+            
+        </div>
+    </body>
+
+</html>
