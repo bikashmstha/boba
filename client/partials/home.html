@@ -4,18 +4,20 @@
         <source src="./assets/videos/RollerCoaster-350950598.mp4" type="video/mp4">
     </video>
     <div class="overlayContent" style="padding: 100px;">
-        <h1>BOBA SEARCH</h1>
+        <div style="width: 200px; height: 100px; margin-top: 32px;">
+            <a href="#!/home"><img style="width:100%; height: 100%; margin: 0px; padding: 0px; align-content: left;" src="../assets/img/boba-logo.svg"/></a>  
+        </div>       
         <p>Search for your favorite YouTubers' first videos!</p>
-        <div>
-            <h3>Search YouTubers:</h3>
+        <h3>Search YouTubers:</h3>
+        <div class="homeSearchArea">
             <form ng-submit="youTubeSearch()">  
                 <p><input type="text" ng-model="newSearch.text" autofocus:"autofocus" placeholder="Search"> <input type="submit" value="Search"></p>
             </form>
             <div class="youTubersBlock">
                 <div class="youTuberInfo" ng-repeat="channel in channelResults">
-                    <p>{{channel.snippet.channelTitle}}</p>
+                    <!--<p>{{channel.snippet.channelTitle}} {{ channel.id.channelId }}</p>-->
                     <!--<p>{{channel.snippet.description}}</p>-->
-                    <a ng-click="firstVideoSearch(channel.id.channelId)"><img ng-src="{{channel.snippet.thumbnails.default.url}}"/></a>
+                    <a href="#!/first/{{ channel.id.channelId }}"><img ng-src="{{channel.snippet.thumbnails.default.url}}"/></a>
                 </div>
             </div>
         </div>

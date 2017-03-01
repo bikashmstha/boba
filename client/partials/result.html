@@ -1,4 +1,4 @@
-    <script>
+<script>
     
     var tag = document.createElement('script');
 
@@ -16,41 +16,29 @@
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
-            }
+            }   
         });
     }
 
-    // function onPlayerReady(event) {
-    //     event.target.playVideo();
-    // }
-
-    // var done = false;
-    //   function onPlayerStateChange(event) {
-    //     if (event.data == YT.PlayerState.PLAYING && !done) {
-    //       setTimeout(stopVideo, 6000);
-    //       done = true;
-    //     }
-    //   }
-    //   function stopVideo() {
-    //     player.stopVideo();
-    //   }
-
     window.onYouTubeIframeAPIReady = this.onYTready.bind(this);
 
-    </script>
+</script>
 
 <div class="overlayContent" style="background-color: black; width: 100%; height: 100%;">
+    <div style="width: 200px; height: 100px; margin-top: 32px;">
+        <a href="#!/home"><img style="width:100%; height: 100%; margin: 0px; padding: 0px; align-content: left;" src="../assets/img/boba-logo.svg"/></a>  
+    </div>
     <h2>Results</h2>
     <!--<p>{{trustSrc(videoUrl)}}</p>-->
-    <!--<p ng-repeat="result in results"></p>-->
+    <!--<p>{{videoUrl}}</p>-->
 
-    <div style="padding: 20px;">
+    <div style="display: flex; justify-content: center; padding: 20px;">
 
         <iframe
             id="youtube_vid"
             width="763"
             height="430"
-            ng-src={{trustSrc(videoUrl)}}
+            ng-src="{{ trustSrc(videoUrl) }}"
             frameborder="0"
             allowfullscreen="">
         </iframe><br/>

@@ -1,22 +1,22 @@
 app.controller('resultsCtrl', function($scope, $sce, SearchService, $routeParams, $location) {
     console.log("results controller loading");
 
-    $scope.videoUrl = "";
+    $scope.videoUrl = undefined;
+    $scope.videoId = undefined;
 
-        // GRABBING THE FIRST VIDEO OF THAT SELECTED CHANNEL
-    $scope.firstVideoSearch = function(channelId) {
-
-        // console.log("first video search function hit in controller");
-
-        SearchService.firstVideoSearch(channelId, function(data) {
-            // console.log("video id inside controller:", data);
-            let videoId = data;
-            console.log("scope is",$scope);
-            $scope.videoUrl = "https://www.youtube.com/embed/"+videoId+"?theme=light&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-            console.log("video id in mainCtrl: ", videoId, "video URL: ", $scope.videoUrl)
-        });
-        console.log("taking the user away from this controller!",$scope.videoUrl);
-        $location.url('/result');
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
     }
+
+        // GRABBING THE FIRST VIDEO OF THE CHANNEL ID PASSED VIA URL PARAMETER
+
+    SearchService.firstVideoSearch($routeParams.id, function(data) {
+        console.log($routeParams.id)
+        // console.log("video id inside controller:", data);
+        $scope.videoId = data;
+        // console.log("scope is",$scope);
+        $scope.videoUrl = "https://www.youtube.com/embed/"+$scope.videoId+"?theme=light&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        console.log("video ID in resultCtrl: ", $scope.videoId, "video URL: ", $scope.videoUrl)
+    });
 
 });

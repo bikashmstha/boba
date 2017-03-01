@@ -2,13 +2,13 @@ var app = angular.module('app', ['ngRoute', 'ngCovervid']);
 app.config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-        redirectTo: '/boba'
+        redirectTo: '/home'
     })
-    .when('/boba', {
-        templateUrl: 'partials/boba.html',
+    .when('/home', {
+        templateUrl: 'partials/home.html',
         controller: 'mainCtrl'
     })
-    .when('/result', {
+    .when('/first/:id', {
         templateUrl: 'partials/result.html',
         controller: 'resultsCtrl'
     })
