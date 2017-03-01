@@ -10,7 +10,7 @@ app.config(function ($routeProvider) {
     })
     .when('/result', {
         templateUrl: 'partials/result.html',
-        controller: 'mainCtrl'
+        controller: 'resultsCtrl'
     })
     .otherwise({
         redirectTo: '/'

@@ -9,12 +9,13 @@
         <div>
             <h3>Search YouTubers:</h3>
             <form ng-submit="youTubeSearch()">  
-                <p><input type="text" ng-model="newSearch.text" placeholder="Search"> <input type="submit" value="Search"></p>
+                <p><input type="text" ng-model="newSearch.text" autofocus:"autofocus" placeholder="Search"> <input type="submit" value="Search"></p>
             </form>
             <div class="youTubersBlock">
                 <div class="youTuberInfo" ng-repeat="channel in channelResults">
                     <p>{{channel.snippet.channelTitle}}</p>
-                    <img ng-src="{{channel.snippet.thumbnails.default.url}}"/>
+                    <!--<p>{{channel.snippet.description}}</p>-->
+                    <a ng-click="firstVideoSearch(channel.id.channelId)"><img ng-src="{{channel.snippet.thumbnails.default.url}}"/></a>
                 </div>
             </div>
         </div>

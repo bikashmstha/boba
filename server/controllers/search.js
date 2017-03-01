@@ -1,5 +1,7 @@
 // var google = require('googleapis');
 var API_KEY = 'AIzaSyDqcpcc3ogh_xyqZpbN4r4P2nJ5Cb7-A0E'
+var google = require('googleapis');
+var youtube = google.youtube({version: 'v3', auth: API_KEY});
 
 // var YouTube         =   require('youtube-node');
 // var youTube         =   new YouTube();
@@ -23,12 +25,9 @@ module.exports = {
 
     index: function(req, res) {
 
-        console.log("parameter ", req.params.id)
+        // console.log("parameter ", req.params.id)
 
         let searchText = req.params.id
-
-        var google = require('googleapis');
-        var youtube = google.youtube({version: 'v3', auth: API_KEY});
 
         var channelQueryOptions = {
             'part': 'id,snippet',
@@ -45,9 +44,9 @@ module.exports = {
                 for(var i in results.items) {
                     var item = results.items[i];
                     // item.thumbnail = 
-                    console.log("Title: ", item.snippet.channelTitle)
+                    // console.log("Title: ", item.snippet.channelTitle)
                 }
-                console.log(results);
+                // console.log(results);
                 res.json(results);
             }
         });
@@ -56,26 +55,31 @@ module.exports = {
     },
 
     firstVideo: function(req, res) {
-        // var videoQueryOptions = {
-        //     'part': 'id,snippet',
-        //     'maxResults': 5,
-        //     'type': 'video',
-        //     'channelId': 'UC6jgzx2g3nlbaYkd8EMweKA',  // get this from the search results above
-        //     'order': 'date'
-        // };
 
-        // youtube.search.list(videoQueryOptions, function(err, results) {
-        //     if (err) {
-        //         console.log(err);
-        //         res.json(err);
-        //     } else {
-        //         // console.log(results);
-        //         let lastOne = results.items[(results.items.length-1)]
-        //         // console.log(results.items[(results.items.length-1)])
-        //         res.json(lastOne)
-        //     }
-        // })
-        console.log("first video function in server");
-        res.json('///////////')
+        console.log('req.params.id', req.params, req.params.id)
+        let channelId = req.params.id
+
+        var videoQueryOptions = {
+            'part': 'id,snippet',
+            'maxResults': 50,
+            'type': 'video',
+            'channelId': channelId,  // get this from the search results above
+            'order': 'date'
+        };
+
+        let handlePage = function (err, results) {
+            console.log("handle page function")
+            if(!results.nextPageToken) {
+                var firstVideo = results.items[(results.items.length-1)];
+                console.log("results: ", results);
+                console.log("final round with firstvideoid: ", firstVideo)
+                res.json(firstVideo);
+            } else {
+                videoQueryOptions.pageToken = results.token;
+                youtube.search.list(videoQueryOptions, handlePage);
+            }
+        }
+
+        youtube.search.list(videoQueryOptions, handlePage);
     }
 }

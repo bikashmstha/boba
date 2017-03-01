@@ -5,6 +5,6 @@ module.exports = function(app) {
 
     app.get('/search/:id', search.index)
 
-    app.get('/findFirstVideo', search.firstVideo)
+    app.get('/first/:id', search.firstVideo)
 
 }
