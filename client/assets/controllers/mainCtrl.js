@@ -18,6 +18,7 @@ app.controller('mainCtrl', function($scope, $sce, SearchService, $routeParams, $
             // console.log("this is the search text entered: ", $scope.newSearch.text)
             // console.log("SEARCH data recevied from be now in fe: ", data);
             $scope.channelResults = data.items;
+            console.log("********* data:", data);
         });
     }
 

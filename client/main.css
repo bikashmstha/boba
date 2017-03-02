@@ -5,6 +5,16 @@ body {
     font-size: 16px;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+form, p {
+    margin: 0px;
+}
+
+/* VIDEO BACKGROUND ON HOME PAGE */
 .covervid-wrapper {
     position: absolute;
     top: 0;
@@ -15,45 +25,83 @@ body {
 
 .overlayContent {
     position: absolute;
-    width: 100%;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    padding: 32px;
-    background-color: rgba(0,0,51,0.3);
+    padding: 6%;
+    width: 90%;
+    /*background-color: rgba(0,0,51,0.3);*/
+    background: linear-gradient(to bottom, rgba(0,0,51,0.4) 0%, rgba(0,199,212,0.2) 100%);
     color: white;
+}
+
+#overlayGeoShape {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    left: 0;
+    opacity: 0.1;
 }
 
 @media screen and (max-device-width: 800px) {
     html {
          background: url(./client/assets/img/citywomanbkgd.jpg) #000 no-repeat center center fixed;
     }
-    .covervide-wrapper {
+    .covervid-wrapper {
+        display: none;
+    }
+    .covervid-video {
         display: none;
     }
 }
 
 .container {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-.mainContent {
+.logoSection {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    width: 200px;
+    height: 100px;
+    margin: 32px 0px 16px 0px;
+}
+
+.logoSection img {
+    border-radius: 0px;
+    width:100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    align-content: left;
 }
 
 .homeSearchArea {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    margin: 32px 0px;
 }
 
-.youTubersBlock {
+.homeSearchArea form {
+    width: 60%;
+}
+
+.homeSearchArea img {
+    width: 60px;
+}
+
+.youTuberResults {
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    overflow: auto;
+    margin-top: 20px;
 }
 
 .youTuberInfo {
@@ -64,10 +112,18 @@ body {
     width: 200px;
 }
 
+.youTuberInfo > * {
+    margin-bottom: 10px;
+}
+
 img {
     height: 100px;
     width: 100px;
-    border-radius: 5px;
+    border-radius: 50%;
+}
+
+.channelThumbnailImage {
+    border: 1px solid #AAA;
 }
 
 .errorMessage {
@@ -84,12 +140,23 @@ button, input[type="submit"] {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: white;
     color: #2a2a2a;
     margin-top: 10px;
-    margin-left: 20px;
     text-decoration: none;
     width: 150px;
+    cursor: pointer;
+    /*margin-left: 20px;*/
+    /*background-color: white;*/
+}
+
+input[type="submit"].arrowSubmit {
+    background: url(../assets/img/arrow.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+    outline: none;
 }
 
 button a:link, a:visited {
@@ -101,25 +168,38 @@ button a:link, a:visited {
     width: 100px;
 }
 
-.currentBids {
-    width: 250px;;
-    height: 200px;
-    border: 1px solid #AAA;
-    border-radius: 5px;
-    padding: 5px; 
-    overflow: auto;
-    margin-bottom: 10px;
-}
+/* TEXT INPUTS */
 
 input[type="text"] {
-    border-radius: 5px;
+    border-radius: none;
+    outline: none;
     padding: 10px;
     border-style: none;
-    border: 1px solid #AAA;
-    color: #555;
-    font-size: 16px;
-    width: 250px;
+    border-bottom: solid 2px #a2a2a2;
+    background-color:transparent;
+    color: white;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    /*width: 250px;*/
 }
+
+.fadedLineTextInput {
+    padding: 10px;
+    border: none;
+    transition: border 0.3s;
+    background-color: none;
+    font-size: 32px;
+    width: 80%;
+    height: 100px;
+}
+
+.fadedLineTextInput:focus,
+.fadedLineTextInput.focus {
+    border-bottom: solid 2px white;
+    background-image: none;
+}
+
+/* HEADER BAR STYLING */
 
 .topHeader {
     display: absolute;
