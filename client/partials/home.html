@@ -1,8 +1,7 @@
 <div class="covervid-wrapper">
 
     <!--VIDEO LOOPING AS BACKGROUND -->
-    <video covervid class="covervid-video" autoplay loop
-        poster="./assets/img/citywomanbkgd.jpeg">
+    <video covervid class="covervid-video" autoplay loop>
         <source src="./assets/videos/RollerCoaster-350950598.mp4" type="video/mp4">
     </video>
 
@@ -10,13 +9,6 @@
 
     <!-- CONTENT OVERLAY -->
     <div class="overlayContent">
-
-        <!--<div id="header-bar">
-            <ul>
-                <li><a href="#!/main">Home</a></li>
-                <li>Test</li>
-            </ul>
-        </div>-->
 
         <!-- LOGO -->
         <div class="logoSection">
@@ -40,15 +32,10 @@
                 <div class="youTuberResults">
                     <div class="youTuberInfo" ng-repeat="channel in channelResults">
                         <p>{{ channel.snippet.channelTitle }}</p>
-                        <!--<p>{{channel.snippet.description}}</p>-->
                         <a href="#!/first/{{ channel.id.channelId }}"><img class="channelThumbnailImage" ng-src="{{channel.snippet.thumbnails.default.url}}"/></a>
                     </div>
                 </div>
-
         </div>
-
-        <!--<div>-->
-        <!--</div>-->
 
     </div>
 

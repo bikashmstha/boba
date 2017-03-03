@@ -14,6 +14,41 @@ form, p {
     margin: 0px;
 }
 
+input[type="text"] {
+    border-radius: none;
+    outline: none;
+    padding: 10px;
+    border-style: none;
+    border-bottom: solid 2px #a2a2a2;
+    background-color:transparent;
+    color: white;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+button, input[type="submit"] {
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #2a2a2a;
+    margin-top: 10px;
+    text-decoration: none;
+    width: 150px;
+    cursor: pointer;
+}
+
+button a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
 /* VIDEO BACKGROUND ON HOME PAGE */
 .covervid-wrapper {
     position: absolute;
@@ -22,6 +57,8 @@ form, p {
     width: 100%;
     height: 100%;
 }
+
+/* CONTENT CONTAINER */
 
 .overlayContent {
     position: absolute;
@@ -33,7 +70,6 @@ form, p {
     padding: 6%;
     width: 90%;
     height: 100%;
-    /*background-color: rgba(0,0,51,0.3);*/
     background: linear-gradient(to bottom, rgba(0,0,51,0.4) 0%, rgba(0,199,212,0.2) 100%);
     color: white;
 }
@@ -42,10 +78,11 @@ form, p {
     position: absolute;
     width: 150%;
     height: 150%;
-    left: 0;
+    left: -200;
     opacity: 0.1;
 }
 
+/* BACKGROUND IMAGE FOR SMALLER DEVICES - REMOVES VIDEO */
 @media screen and (max-device-width: 800px) {
     html {
          background: url(./client/assets/img/citywomanbkgd.jpg) #000 no-repeat center center fixed;
@@ -58,12 +95,16 @@ form, p {
     }
 }
 
+/* MAIN CONTENT */
+
 .container {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
 }
+
+
+/* LOGO */
 
 .logoSection {
     display: flex;
@@ -71,8 +112,7 @@ form, p {
     width: 200px;
     height: 100px;
     margin-top: 6%;
-    margin-bottom: 3%;
-    /*margin: 32px 0px 16px 0px;*/
+    margin-bottom: 2%;
 }
 
 .logoSection img {
@@ -83,6 +123,8 @@ form, p {
     padding: 0px;
     align-content: left;
 }
+
+/* SEARCH SECTION */
 
 .homeSearchArea {
     display: flex;
@@ -98,6 +140,34 @@ form, p {
 .homeSearchArea img {
     width: 60px;
 }
+
+input[type="submit"].arrowSubmit {
+    background: url(../assets/img/arrow.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+    outline: none;
+}
+
+.fadedLineTextInput {
+    padding: 10px;
+    border: none;
+    transition: border 0.3s;
+    background-color: none;
+    font-size: 32px;
+    width: 80%;
+    height: 100px;
+}
+
+.fadedLineTextInput:focus,
+.fadedLineTextInput.focus {
+    border-bottom: solid 2px white;
+    background-image: none;
+}
+
+/* SEARCH RESULTS ON HOME PAGE */
 
 .youTuberResults {
     display: flex;
@@ -119,14 +189,14 @@ form, p {
     margin-bottom: 10px;
 }
 
-img {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-}
-
 .channelThumbnailImage {
     border: 1px solid #AAA;
+}
+
+/* RESULTS INFORMATION / LEFT COLUMN IN RESULTS PAGE */
+
+.resultsInfoContainer {
+    width: 20%;
 }
 
 .errorMessage {
@@ -134,126 +204,16 @@ img {
     font-weight: bold;
 }
 
-.filter {
-    margin-bottom: 64px;
-}
-
-button, input[type="submit"] {
-    font-size: 16px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: #2a2a2a;
-    margin-top: 10px;
-    text-decoration: none;
-    width: 150px;
-    cursor: pointer;
-    /*margin-left: 20px;*/
-    /*background-color: white;*/
-}
-
-input[type="submit"].arrowSubmit {
-    background: url(../assets/img/arrow.svg);
-    background-repeat: no-repeat;
-    background-color: transparent;
-    margin: 0px;
-    width: 50px;
-    height: 50px;
-    outline: none;
-}
-
-button a:link, a:visited {
-    text-decoration: none;
-    color: white;
-}
-
-.bidBox .bidInput {
-    width: 100px;
-}
-
-/* TEXT INPUTS */
-
-input[type="text"] {
-    border-radius: none;
-    outline: none;
-    padding: 10px;
-    border-style: none;
-    border-bottom: solid 2px #a2a2a2;
-    background-color:transparent;
-    color: white;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    /*width: 250px;*/
-}
-
-.fadedLineTextInput {
-    padding: 10px;
-    border: none;
-    transition: border 0.3s;
-    background-color: none;
-    font-size: 32px;
-    width: 80%;
-    height: 100px;
-}
-
-.fadedLineTextInput:focus,
-.fadedLineTextInput.focus {
-    border-bottom: solid 2px white;
-    background-image: none;
-}
+/* RESULTS PAGE SPECIIC STYLING */
 
 .videoContainer {
     display: flex;
     justify-content: center;
     padding: 20px;
+    width: 70%;
 }
 
 .firstVideo {
     border: 32px solid rgba(250,255,255,0.2);
     border-radius: 5px;
-}
-
-/* HEADER BAR STYLING */
-
-.topHeader {
-    display: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
-
-#header-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    height: 32px;
-    padding: 5px;
-    background-color: rgba(0,0,51,0.5);
-    align-items: center;
-    margin: 0px;
-    font-size: 16px;
-    font-family: sans-serif;
-    padding: 10px;
-}
-
-#header-bar > ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 10px;
-}
-
-#header-bar > ul > li {
-    display: inline;
-    margin-left: 32px;
-}
-
-#header-bar > ul > li > a:link, #header-bar > ul > li > a:visited {
-    text-decoration: none;
-    color: white;
-}
-
-#header-bar > ul > li > a:hover {
-    color: white;
-    opacity: 0.50;
-    text-decoration: none;
 }

@@ -16,7 +16,8 @@
   ],
   "dependencies": {
     "angular": "^1.6.2",
-    "angular-route": "^1.6.2"
+    "angular-route": "^1.6.2",
+    "ng-covervid": "^0.1.0"
   },
   "resolutions": {
     "angular": "1.6.2"
