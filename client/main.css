@@ -85,7 +85,7 @@ img {
 /* BACKGROUND IMAGE FOR SMALLER DEVICES - REMOVES VIDEO */
 @media screen and (max-device-width: 800px) {
     html {
-         background: url(./client/assets/img/citywomanbkgd.jpg) #000 no-repeat center center fixed;
+         background: url(../assets/img/citywomanbkgd.jpeg) no-repeat;
     }
     .covervid-wrapper {
         display: none;
