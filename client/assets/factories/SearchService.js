@@ -2,7 +2,8 @@ app.factory('SearchService', ['$http', '$location', function($http, $location) {
 
     var factory = {};
 
-    var videoId;
+    // var videoId;
+    // var channelTitle;
     
 	factory.youTubeSearch = function(searchText, callback){
 
@@ -25,9 +26,11 @@ app.factory('SearchService', ['$http', '$location', function($http, $location) {
         .then(function(res) {
             if (typeof(callback) === 'function') {
                 console.log("response from server received in first video service: ", res.data);
-                videoId = res.data.id.videoId
-                console.log("video id in searchservice to send back: ", videoId);
-                callback(videoId);
+                // videoId = res.data.id.videoId
+                // channelTitle = res.data.snippet.channelTitle
+                // console.log("channel title is: ", channelTitle)
+                // console.log("video id in searchservice to send back: ", videoId);
+                callback(res.data);
             };
         })
     }
