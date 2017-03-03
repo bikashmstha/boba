@@ -32,6 +32,7 @@ form, p {
     margin: auto;
     padding: 6%;
     width: 90%;
+    height: 100%;
     /*background-color: rgba(0,0,51,0.3);*/
     background: linear-gradient(to bottom, rgba(0,0,51,0.4) 0%, rgba(0,199,212,0.2) 100%);
     color: white;
@@ -69,7 +70,9 @@ form, p {
     flex-wrap: wrap;
     width: 200px;
     height: 100px;
-    margin: 32px 0px 16px 0px;
+    margin-top: 16%;
+    margin-bottom: 3%;
+    /*margin: 32px 0px 16px 0px;*/
 }
 
 .logoSection img {
@@ -199,6 +202,17 @@ input[type="text"] {
     background-image: none;
 }
 
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.firstVideo {
+    border: 32px solid rgba(250,255,255,0.2);
+    border-radius: 5px;
+}
+
 /* HEADER BAR STYLING */
 
 .topHeader {
@@ -214,7 +228,7 @@ input[type="text"] {
     justify-content: flex-end;
     height: 32px;
     padding: 5px;
-    background-color: black;
+    background-color: rgba(0,0,51,0.5);
     align-items: center;
     margin: 0px;
     font-size: 16px;

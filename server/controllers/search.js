@@ -36,6 +36,25 @@ module.exports = {
             'type': 'channel'
         };
 
+        // var channelStatisticsOptions = {
+        //         'mine': false,
+        //         'part': 'id, statistics',
+        //         'channelId': channelId
+        // };
+
+        // let getChannelStats = function(err, results) {
+            
+
+        //     console.log("************", channelId);
+
+        //     youtube.channels.list(channelStatisticsOptions, function(err, channelStats) {
+        //         console.log('these are the channel stats for each channel: ', channelStats);
+        //     })
+        // }
+
+        // youtube.channels.list(channelStatisticsOptions, getChannelStats);
+
+
         youtube.search.list(channelQueryOptions, function (err, results) {
             if (err) {
                 console.error(err);
@@ -44,18 +63,6 @@ module.exports = {
                 for (var i in results.items) {
                     var item = results.items[i];
                     console.log(item);
-
-                    // var channelId = item.id.channelId
-                    // var channelStatisticsOptions = {
-                    //     'part': 'id,snippet, statistics',
-                    //     'channelId': channelId
-                    // }
-
-                    // console.log("************", channelId, channelStatisticsOptions);
-
-                    // youtube.Channels.list(channelStatisticsOptions, function(err, channelStats) {
-                    //     console.log(channelStats);
-                    // })
                 }
                 // console.log(results);
                 res.json(results);
@@ -89,11 +96,11 @@ module.exports = {
             };
 
             if (!results.nextPageToken) {
-                console.log("results: ", results);
-                console.log("final round with firstvideoid: ", firstVideo)
+                // console.log("results: ", results);
+                // console.log("final round with firstvideoid: ", firstVideo)
                 res.json(firstVideo);
             } else {
-                console.log("*********results with token:", results.nextPageToken, results.items.length);
+                // console.log("*********results with token:", results.nextPageToken, results.items.length);
                 videoQueryOptions.pageToken = results.nextPageToken;
                 youtube.search.list(videoQueryOptions, handlePage);
             };
